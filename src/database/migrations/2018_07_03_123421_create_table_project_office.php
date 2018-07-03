@@ -26,7 +26,7 @@ class CreateTableProjectOffice extends Migration
 
             $table->unsignedInteger('category_id')->nullable();
 
-            $table->images('contractor')->nullable();
+            $table->text('images')->nullable();
             $table->integer('identifier')->nullable();
             $table->bigInteger('budget')->nullable();
 
