@@ -14,6 +14,7 @@ class CreateTableProjectOffice extends Migration
     public function up()
     {
         Schema::create('ikomek-project-office-category', function (Blueprint $table) {
+            $table->increments('id');
 
             $table->integer('stage')->nullable();
             $table->string('title')->nullable();
