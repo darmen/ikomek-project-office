@@ -32,6 +32,6 @@ class CreateResponsesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('responses');
+        Schema::dropIfExists('ikomek-project-office-response');
     }
 }
