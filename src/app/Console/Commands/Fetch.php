@@ -2,8 +2,10 @@
 
 namespace Darmen\IKomekProjectOffice\src\app\Console\Commands;
 
+use Carbon\Carbon;
 use Darmen\IKomekProjectOffice\app\Models\Category;
 use Darmen\IKomekProjectOffice\app\Models\Project;
+use Darmen\IKomekProjectOffice\app\Models\Response;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -44,11 +46,11 @@ class Fetch extends Command
         $url = 'http://192.168.10.61/restapi/getproject';
         $json_str = @file_get_contents($url);
 
-
-//        $request = new Request();
-//        $request->setCreatedAt(new \DateTime());
-//        $request->setResponseCode($http_response_header[0]);
-//        $request->setUrl($url);
+        $response = new Response;
+        $response->created_at = Carbon::now();
+        $response->response_code = $http_response_header[0];
+        $response->url = $url;
+        $response->error_message = null;
 
         if ($json_str) {
             $projects = json_decode($json_str, true);
@@ -117,7 +119,8 @@ class Fetch extends Command
 
             }
 
-//            $request->setProjectsCount($saved);
+            $response->projects_count = $saved;
+            $response->save();
 
             $this->line('Done - '.$saved);
 
