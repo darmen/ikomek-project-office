@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $table = 'ikomek-project-office-category';
+    public $timestamps = false;
 
     public function projects()
     {

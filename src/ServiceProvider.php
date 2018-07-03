@@ -2,6 +2,7 @@
 
 namespace Darmen\IKomekProjectOffice;
 
+use Darmen\IKomekProjectOffice\src\app\Console\Commands\Fetch;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 class ServiceProvider extends IlluminateServiceProvider
@@ -16,6 +17,13 @@ class ServiceProvider extends IlluminateServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/ikomek/project-office.php');
         $this->loadViewsFrom(__DIR__.'/resources/views', 'project-office');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+
+        if ($this->app->runningInConsole())
+        {
+            $this->commands([
+                Fetch::class
+            ]);
+        }
     }
 
     /**
