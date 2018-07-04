@@ -17,6 +17,9 @@ class ServiceProvider extends IlluminateServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/ikomek/project-office.php');
         $this->loadViewsFrom(__DIR__.'/resources/views', 'project-office');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->publishes([
+            __DIR__.'/config/ikomek/project-office.php' => config_path('ikomek/project-office.php'),
+        ], 'config');
 
         if ($this->app->runningInConsole())
         {

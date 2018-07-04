@@ -17,7 +17,7 @@ class CreateTableProjectOffice extends Migration
             $table->increments('id');
 
             $table->integer('stage')->nullable();
-            $table->string('title')->nullable();
+            $table->text('title')->nullable();
             $table->string('kurator')->nullable();
             $table->string('supervisor')->nullable();
             $table->string('contractor')->nullable();
