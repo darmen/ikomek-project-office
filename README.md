@@ -1,4 +1,7 @@
-## iKomek Project Office for Laravel 5
+# iKomek Project Office for Laravel 5
+
+[![Latest Stable Version](https://poser.pugx.org/darmen/ikomek-project-office/v/stable.png)](https://packagist.org/packages/nesbot/carbon)
+[![Total Downloads](https://poser.pugx.org/darmen/ikomek-project-office/downloads.png)](https://packagist.org/packages/nesbot/carbon)
 
 ## Installation
 
