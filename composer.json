@@ -16,12 +16,5 @@
             "email": "darmen.amanbayev@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Darmen\\IKomekProjectOffice\\ServiceProvider"
-            ]
-        }
-    }
+    "minimum-stability": "stable"
 }
